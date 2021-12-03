@@ -2,7 +2,6 @@ data = open("input.txt").read().split("\n")
 
 gamma = 0
 epsilon = 0
-
 lista0 = []
 lista1 = []
 
@@ -12,14 +11,11 @@ for a in data[0]:
     
 for line in data:
     for x, n in enumerate(line):
-        #print(x, n)
         if n == "0":
             lista0[x] = lista0[x] + 1
         elif n == "1":
             lista1[x] = lista1[x] + 1
-    #print(lista0,lista1)
 
-#int('0b1011000', 2)
 gamma = "0b"
 epsilon = "0b"
 for z, o in zip(lista0, lista1):

@@ -1,6 +1,6 @@
 data = open("input.txt").read().split("\n")
 
-def co2(lista, ett, noll):
+def co2(lista, one, zero):
     counter = 0
     while len(lista) > 1:
         tmp0 = 0
@@ -12,17 +12,11 @@ def co2(lista, ett, noll):
             elif line[counter] == "1":
                 tmp1+=1
         if tmp0 > tmp1:
-            tmplist = [x for x in lista if x[counter] == ett]
-        elif tmp0 < tmp1:
-            tmplist = [x for x in lista if x[counter] == noll]
-        elif tmp0 == tmp1:
-            tmplist = [x for x in lista if x[counter] == noll]
+            tmplist = [x for x in lista if x[counter] == one]
+        elif tmp0 < tmp1 or tmp0 == tmp1:
+            tmplist = [x for x in lista if x[counter] == zero]
         counter+=1
         lista = tmplist
-    
     return(int(lista[0], 2))
 
-first = co2(data, "1", "0")
-second = co2(data, "0", "1")
-
-print(first*second)
+print(co2(data, "1", "0")*co2(data, "0", "1"))
