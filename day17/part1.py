@@ -7,7 +7,6 @@ y = y.strip(" y=")
 target_area = [[m,n] for m in range(int(x.split("..")[0]),int(x.split("..")[1])+1) for n in range(int(y.split("..")[0]),int(y.split("..")[1])+1)]
 min_x, max_x = [int(b) for b in x.split("..")]
 min_y, max_y = [int(b) for b in y.split("..")]
-print(min_y)
 max_peak = 0
 test_probe = [0,0]
 
@@ -34,5 +33,3 @@ for x in range(1, max_x + 1):
                 break
 
 print(max_peak)
-
-#378 too low
